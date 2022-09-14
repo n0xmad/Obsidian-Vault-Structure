@@ -83,6 +83,10 @@ async function getNoteStruct(noteTag) {
 		structName = "[[0407 - Struct_Personal_Body]]";
 		dest = "05 - Personal";
 		prefix = "";
+	} else if (tag.startsWith('💻')) {
+		structName = "[[0410 - Struct_Box_TOC]]";
+		dest = "03 - Content";
+		prefix = "";
 	} else {
 		console.log("You selected an option outside what was expected.");
 		console.log("Try again.");
@@ -188,7 +192,7 @@ async function ShouldLink(struct) {
 //////////////////////////////////////////////////////////////////////////////////
 
 // Present selection of Search Tags to user
-let tag = await tp.system.suggester(["📕 (TTP)", "🧰 (Tool)", "💡 (Idea)", "📖 (Documentation)", "㊙️ (Personal)", "🗺 (Secondary Category)"], ["📕", "🧰", "💡", "📖", "㊙️", "🗺"], true) 
+let tag = await tp.system.suggester(["📕 (TTP)", "🧰 (Tool)", "💡 (Idea)", "📖 (Documentation)", "㊙️ (Personal)", "🗺 (Secondary Category)", "💻 (Machine)"], ["📕", "🧰", "💡", "📖", "㊙️", "🗺","💻"], true) 
 
 // Ensure the user isnt supplying an undefined or untitled note name
 await setTitle(title);
